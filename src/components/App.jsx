@@ -1,23 +1,20 @@
-import { StrictMode, useState } from 'react'
+import { StrictMode, useState } from "react";
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
 
-import Home from "./Home/Home"
-import Navigation from './Navigation/Navigation'
+import Home from "./Home/Home";
+import Navigation from "./Navigation/Navigation";
+import Cart from "./ShoppingCart/ShoppingCart"
 
 function App() {
-
-
   return (
     <>
-    <StrictMode>
-    <Navigation/>
-    <Home/>
-    </StrictMode>
-
+      <Navigation />
+      <Home />
+      <Cart/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
