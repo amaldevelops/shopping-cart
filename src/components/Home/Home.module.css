@@ -1,11 +1,25 @@
+.container
+{
+  padding:3rem;
+}
+
+.headingsH1
+{
+  /* float:left;
+  padding: 1rem;; */
+}
+
 .list {
+  /* padding:10px; */
   background-color: rgb(255, 255, 255);
   list-style-type: circle;
+  /* position:static; */
   float: left;
   /* color: aqua; */
 }
 
 .listItem {
   /* background-color: red; */
-  float: left;
+  padding:0;
+  
 }

@@ -2,23 +2,28 @@ import HomeCSS from './Home.module.css'
 function Home()
 {
     return (
-        <div >
-            <h1>Welcome To Shopping cart developed using React</h1>
+        <div className={HomeCSS.container}>
+            <h1>Welcome to Mock Shopping cart developed using React</h1>
+            <div className={HomeCSS.container}>
             <h2>About</h2>
-            <ul>
+            <ul className={HomeCSS.list}>
                 <li><a href="https://github.com/1Amal/React-ShoppingCart">Source Code</a></li>
                 <li><a href="https://amalk-reactshoppingcart.netlify.app/">Live Demo</a></li>
             </ul>
-            <h2>App Architecture</h2>
+            </div>
+         <div className={HomeCSS.container}>
+         <h2 className={HomeCSS.headingsH1}>App Architecture</h2>
             <h3>Component Structure</h3>
             <ul className={HomeCSS.list}>
-                <li>Main  =&gt; App =&gt; Home =&gt; </li>
-                <li>Shop =&gt; </li>
-                <li>Shopping Cart</li>
-                <li>Product</li>
+                <li className={HomeCSS.listItem }>Main  =&gt; App =&gt; Home =&gt; </li>
+                <li className={HomeCSS.listItem }>Shop =&gt; </li>
+                <li className={HomeCSS.listItem }>Shopping Cart</li>
+                <li className={HomeCSS.listItem }>Product</li>
 
 
             </ul>
+         </div>
+         
         </div>
     )
 }

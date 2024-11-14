@@ -12,7 +12,7 @@ function App() {
     <>
       <Navigation />
       <Home />
-      <Cart/>
+     
     </>
   );
 }

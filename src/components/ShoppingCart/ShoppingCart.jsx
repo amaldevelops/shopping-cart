@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Navigation from "../Navigation/Navigation";
 
 const Heading1 = styled.h1`
   font-size: 1.8em;
@@ -15,8 +16,11 @@ function ShoppingCart() {
   return (
     <div>
       <h1>Shopping Cart</h1>
+      <Navigation/>
+      
       <Heading1>Item 1</Heading1>
       <Heading2>Item 2</Heading2>
+      <button type="button">Checkout</button>
     </div>
   );
 }
