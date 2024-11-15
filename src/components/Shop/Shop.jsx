@@ -5,8 +5,10 @@ function Shop()
     return(
         <div>
             <h1>Shop Items</h1>
-            <Navigation/>
+            {/* <Navigation/> */}
             <ShoppingCart/>
         </div>
     )
 }
+
+export default Shop;

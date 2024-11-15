@@ -16,7 +16,7 @@ function ShoppingCart() {
   return (
     <div>
       <h1>Shopping Cart</h1>
-      <Navigation/>
+      {/* <Navigation/> */}
       
       <Heading1>Item 1</Heading1>
       <Heading2>Item 2</Heading2>

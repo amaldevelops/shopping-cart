@@ -7,7 +7,7 @@ function Navigation()
             <ul>
                 <li><a href="Home">Home</a></li>
                 <li><a href="Shop">Shop</a></li>
-                <li><a href="Cart">Cart</a></li>
+                <li><a href="ShoppingCart">Cart</a></li>
             </ul>
             </div>
         
