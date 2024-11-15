@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 import HomeCSS from './Home.module.css'
 import Navigation from '../Navigation/Navigation';
 function Home()

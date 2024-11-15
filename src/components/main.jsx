@@ -1,6 +1,9 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+
+
+
 // import './index.css'
 import App from './App';
 import Home from './Home/Home';
@@ -12,7 +15,8 @@ const router=createBrowserRouter(
   [
     {
       path:"/",
-      element:<App/>
+      element:<App/>,
+      errorElement:<Home/>
     },
     {
       path:"Home",
@@ -33,6 +37,7 @@ const router=createBrowserRouter(
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
+    
     <Navigation/>
     <RouterProvider router={router}/>
   </StrictMode>,
