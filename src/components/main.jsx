@@ -14,7 +14,6 @@ import Navigation from "./Navigation/Navigation";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    {/* <Navigation /> */}
     <RouterProvider router={router} />
   </StrictMode>
 );

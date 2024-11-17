@@ -5,6 +5,7 @@ import Navigation from "../Navigation/Navigation";
 function Home() {
   return (
     <div className={HomeCSS.container}>
+      <Navigation />
       <h1>Welcome to Mock Shopping cart developed using React</h1>
       <div className={HomeCSS.container}>
         <h2>About</h2>
@@ -29,7 +30,7 @@ function Home() {
           <li className={HomeCSS.listItem}>Product</li>
         </ul>
         <div className={HomeCSS.container}>
-          <h1>App Specification</h1>
+          <h1 className={HomeCSS.headingsH1}>App Specification</h1>
           <ul className={HomeCSS.list}>
             <li className={HomeCSS.listItem}>Consistent Navigation Bar</li>
             <li>Fetch shop items from FakeStore API </li>

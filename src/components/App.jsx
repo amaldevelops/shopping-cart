@@ -11,7 +11,6 @@ import Cart from "./ShoppingCart/ShoppingCart";
 function App() {
   return (
     <>
-      <Navigation />
       <Home />
     </>
   );

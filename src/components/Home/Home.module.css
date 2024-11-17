@@ -1,26 +1,20 @@
-.container
-{
-  padding:3rem;
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 0rem 0rem 5rem 0rem;
+  margin: 0rem 0rem 1rem 0rem;
 }
 
-.headingsH1
-{
-  /* float:left;
-  padding: 1rem;; */
+.headingsH1 {
+  padding-bottom: 2rem;
 }
 
 .list {
-  /* padding:10px; */
   background-color: rgb(255, 255, 255);
   list-style-type: circle;
-  /* position:static; */
-  float: left;
-  /* color: aqua; */
+  padding: 0rem;
 }
 
 .listItem {
-  /* background-color: red; */
-  padding:0;
-  /* float:left; */
-  
+  padding: 0rem;
 }

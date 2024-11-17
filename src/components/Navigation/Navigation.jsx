@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import NavigationCSS from "./Navigation.module.css";
 
 
+
 function Navigation() {
+  let noOfItems=3;
   return (
     <div className={NavigationCSS.navigationBar}>
-      {/* <Link to="Home">Home</Link> */}
-      {/* <Link to="Home">Home</Link> */}
       <ul>
-        <li><Link to="../Home">Home</Link></li>
         <li>
-          <a href="Home">Home</a>
+          <Link to="../Home">Home</Link>
+        </li>
+
+        <li>
+          <Link to="../Shop">Shop</Link>
         </li>
         <li>
-          <a href="Shop">Shop</a>
-        </li>
-        <li>
-          <a href="ShoppingCart">Cart</a>
+          <Link to="../ShoppingCart">Cart <span><strong>({noOfItems})</strong></span></Link>
         </li>
       </ul>
     </div>

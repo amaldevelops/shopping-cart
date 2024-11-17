@@ -1,14 +1,16 @@
+// import { Link } from "react-router-dom";
+
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Navigation from "../Navigation/Navigation";
-import { Link } from "react-router-dom";
+import ShopItems from "./ShopItems/ShopItems";
+
 
 function Shop() {
   return (
     <div>
-      <Link to="Home">Home </Link>
-      <h1>Shop Items</h1>
-      {/* <Navigation/> */}
       <ShoppingCart />
+      <ShopItems/>
+      {/* <h1>Shop Items</h1> */}
     </div>
   );
 }
