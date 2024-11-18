@@ -1,4 +1,11 @@
 import { useState, useEffect } from "react";
+import styled from "styled-components";
+
+const DivStyles = styled.div`
+  border: 2px solid #bf4f74;
+  margin: 2rem;
+  padding: 2rem;
+`;
 
 function ShopItems({ itemSearchTerm }) {
   const [itemInfo, setItemInfo] = useState({
@@ -29,26 +36,33 @@ function ShopItems({ itemSearchTerm }) {
 
   return (
     <div>
-      <h2>{itemInfo.itemName}</h2>
-      <img src={itemInfo.itemImage} alt="Item Image" width="200" height="150" />
+      <DivStyles>
+        <h2>{itemInfo.itemName}</h2>
+        <img
+          src={itemInfo.itemImage}
+          alt="Item Image"
+          width="200"
+          height="150"
+        />
 
-      <p>{itemInfo.itemDescription}</p>
-      <p>
-        <span>Price: $</span>
-        {itemInfo.itemPrice}
-      </p>
-      <label htmlFor="quantity">Quantity</label>
-      <input
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="0"
-        max="10"
-        value={itemInfo.quantity}
-        onChange={(changeQuantity) =>
-          setItemInfo({ ...itemInfo, quantity: changeQuantity.target.value })
-        }
-      />
+        <p>{itemInfo.itemDescription}</p>
+        <p>
+          <span>Price: $</span>
+          {itemInfo.itemPrice}
+        </p>
+        <label htmlFor="quantity">Quantity</label>
+        <input
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="0"
+          max="10"
+          value={itemInfo.quantity}
+          onChange={(changeQuantity) =>
+            setItemInfo({ ...itemInfo, quantity: changeQuantity.target.value })
+          }
+        />
+      </DivStyles>
     </div>
   );
 }
