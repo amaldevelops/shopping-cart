@@ -5,13 +5,14 @@ const DivStyles = styled.div`
   border: 2px solid #bf4f74;
   margin: 2rem;
   padding: 2rem;
+  background-color:#4fcfb3;
 `;
 
 function ShopItems({ itemSearchTerm }) {
   const [itemInfo, setItemInfo] = useState({
-    itemName: "Fake Item",
+    itemName: "Item Name",
     itemImage: "",
-    itemDescription: "Awesome Item",
+    itemDescription: "Item Description",
     itemPrice: "$0",
     quantity: 0,
   });
