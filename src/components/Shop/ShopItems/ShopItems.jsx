@@ -17,6 +17,8 @@ function ShopItems({ itemSearchTerm }) {
     quantity: 0,
   });
 
+
+
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${itemSearchTerm}`, {
       mode: "cors",
