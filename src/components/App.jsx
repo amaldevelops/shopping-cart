@@ -16,4 +16,6 @@ function App() {
   );
 }
 
+// const App = () => <h1>Welcome to Mock Shopping cart developed using React</h1>;
+
 export default App;

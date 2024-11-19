@@ -5,7 +5,7 @@ const DivStyles = styled.div`
   border: 2px solid #bf4f74;
   margin: 2rem;
   padding: 2rem;
-  background-color:#4fcfb3;
+  background-color: #4fcfb3;
 `;
 
 function ShopItems({ itemSearchTerm }) {
@@ -17,7 +17,23 @@ function ShopItems({ itemSearchTerm }) {
     quantity: 0,
   });
 
+  function decreaseItems() {
+    if (itemInfo.quantity > 0) {
+      let decreaseItems = itemInfo.quantity - 1;
+      setItemInfo({ ...itemInfo, quantity: decreaseItems });
+    }
+  }
+  function increaseItems() {
+    if (itemInfo.quantity < 10) {
+      let increaseItems = itemInfo.quantity + 1;
 
+      setItemInfo({ ...itemInfo, quantity: increaseItems });
+    }
+  }
+
+  function addToCart() {
+    alert("Add to Cart Man !");
+  }
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${itemSearchTerm}`, {
@@ -53,7 +69,8 @@ function ShopItems({ itemSearchTerm }) {
           <span>Price: $</span>
           {itemInfo.itemPrice}
         </p>
-        <label htmlFor="quantity">Quantity</label>
+        <label htmlFor="quantity">Quantity : </label>
+        <button onClick={decreaseItems}>Decrease</button>
         <input
           type="number"
           id="quantity"
@@ -65,6 +82,8 @@ function ShopItems({ itemSearchTerm }) {
             setItemInfo({ ...itemInfo, quantity: changeQuantity.target.value })
           }
         />
+        <button onClick={increaseItems}>Increase</button>
+        <button onClick={addToCart}>Add To Cart</button>
       </DivStyles>
     </div>
   );
