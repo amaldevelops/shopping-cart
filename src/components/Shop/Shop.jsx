@@ -1,5 +1,7 @@
 // import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Outlet } from "react-router-dom";
+
 
 
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
@@ -9,10 +11,7 @@ import ShopItems from "./ShopItems/ShopItems";
 
 function Shop() {
 
-  const [shoppingCart, setShoppingCart] = useState([{totalItems:0,totalPrice:0},
-    
-    { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice:0},
-  ]);
+ 
 
   function updateCart()
   {
@@ -21,7 +20,9 @@ function Shop() {
 
   return (
     <div>
-      <ShoppingCart shoppingCart={shoppingCart}/>
+      {/* <ShoppingCart/> */}
+      <Navigation/>
+      <Outlet/>
       <ShopItems itemSearchTerm={10} />
       <ShopItems itemSearchTerm={11}/>
       <ShopItems itemSearchTerm={12}/>

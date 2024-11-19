@@ -5,7 +5,7 @@ import Navigation from "../Navigation/Navigation";
 function Home() {
   return (
     <div className={HomeCSS.container}>
-      <Navigation />
+      <Navigation/>
       <h1>Welcome to Mock Shopping cart developed using React</h1>
       <div className={HomeCSS.container}>
         <h2>About</h2>

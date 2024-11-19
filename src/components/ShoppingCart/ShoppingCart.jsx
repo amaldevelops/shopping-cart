@@ -8,12 +8,17 @@ const Heading1 = styled.h1`
   color: #bf4f74;
 `;
 
-function ShoppingCart({ shoppingCart }) {
+function ShoppingCart() {
   const Heading2 = styled.h2`
     font-size: 1.3em;
     text-align: center;
     color: #bf4f74;
   `;
+  const [shoppingCart, setShoppingCart] = useState([
+    { totalItems: 0, totalPrice: 0 },
+
+    { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 },
+  ]);
 
   if (shoppingCart === undefined) {
     return (
@@ -25,7 +30,7 @@ function ShoppingCart({ shoppingCart }) {
   } else {
     return (
       <div>
-        <Navigation />
+        {/* <Navigation /> */}
 
         <div>
           <h1>Cart</h1>
@@ -35,8 +40,8 @@ function ShoppingCart({ shoppingCart }) {
           <strong>{shoppingCart[1]["itemName"]} : </strong>3 x{" "}
           <span>{shoppingCart[0]["itemPrice"]} </span>
           <span>=Aud50</span>
-          <h2>Total:Aud</h2>
         </p>
+        <h3>Total: Aud</h3>
 
         <button type="button">Checkout</button>
         <button type="button">Clear Cart</button>

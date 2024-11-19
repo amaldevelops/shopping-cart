@@ -11,17 +11,20 @@ const routes = [
     errorElement: <App />,
   },
   {
-    path: "Home",
+    path: "home",
     element: <Home />,
   },
   {
-    path: "Shop",
+    path: "shop",
     element: <Shop />,
+    children:[
+      {path:"cart",element:<ShoppingCart />}
+    ],
   },
-  {
-    path: "ShoppingCart",
-    element: <ShoppingCart />,
-  },
+  // {
+  //   path: "ShoppingCart",
+  //   element: <ShoppingCart />,
+  // },
 ];
 
 export default routes;
