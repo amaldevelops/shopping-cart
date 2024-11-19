@@ -70,7 +70,7 @@ function ShopItems({ itemSearchTerm }) {
           {itemInfo.itemPrice}
         </p>
         <label htmlFor="quantity">Quantity : </label>
-        <button onClick={decreaseItems}>Decrease</button>
+        <button onClick={decreaseItems}> - </button>
         <input
           type="number"
           id="quantity"
@@ -82,7 +82,7 @@ function ShopItems({ itemSearchTerm }) {
             setItemInfo({ ...itemInfo, quantity: changeQuantity.target.value })
           }
         />
-        <button onClick={increaseItems}>Increase</button>
+        <button onClick={increaseItems}>+</button>
         <button onClick={addToCart}>Add To Cart</button>
       </DivStyles>
     </div>
