@@ -48,7 +48,7 @@ function ShopItems({ itemSearchTerm }) {
           itemDescription: json.description,
           itemPrice: json.price,
         });
-        console.dir(json);
+        // console.dir(json);
       })
       .catch((error) => console.log(error));
   }, []);
