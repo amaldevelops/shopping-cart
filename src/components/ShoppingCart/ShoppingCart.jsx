@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
+import { Outlet, useOutletContext } from "react-router-dom";
+
 import Navigation from "../Navigation/Navigation";
 
 const Heading1 = styled.h1`
@@ -14,24 +16,18 @@ function ShoppingCart() {
     text-align: center;
     color: #bf4f74;
   `;
-  const [shoppingCart, setShoppingCart] = useState([
-    { totalItems: 0, totalPrice: 0 },
-
-    { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 },
-  ]);
+  const [shoppingCart, setShoppingCart] = useOutletContext();
+  console.log(shoppingCart);
 
   if (shoppingCart === undefined) {
     return (
       <div>
-        <Navigation />
         <h1>Empty Cart</h1>
       </div>
     );
   } else {
     return (
       <div>
-        {/* <Navigation /> */}
-
         <div>
           <h1>Cart</h1>
         </div>
