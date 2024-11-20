@@ -10,16 +10,16 @@ function Shop() {
   const [shoppingCart, setShoppingCart] = useState([
     { totalItems: 0, totalPrice: 0 },
 
-    { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 },
+    [{ itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 }],
   ]);
 
   function updateCart() {}
 
   return (
     <div>
-      <Navigation />
+      <Navigation shoppingCart={shoppingCart}/>
       <Outlet context={[shoppingCart, setShoppingCart]} />
-      <ShopItems itemSearchTerm={10} />
+      <ShopItems itemSearchTerm={10} setShoppingCart={setShoppingCart}/>
       <ShopItems itemSearchTerm={11} />
       <ShopItems itemSearchTerm={12} />
       <ShopItems itemSearchTerm={13} />

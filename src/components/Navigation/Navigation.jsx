@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 import NavigationCSS from "./Navigation.module.css";
 
-function Navigation() {
+function Navigation({shoppingCart}) {
   let noOfItems = 3;
   return (
     <div className={NavigationCSS.navigationBar}>
@@ -14,6 +14,7 @@ function Navigation() {
         <li>
           <Link to="../shop/cart">Shop</Link>
         </li>
+        
         {/* <li>
           <Link to="../shop/cart">Cart <span><strong>({noOfItems})</strong></span></Link>
         </li> */}

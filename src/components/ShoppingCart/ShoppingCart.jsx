@@ -19,7 +19,13 @@ function ShoppingCart() {
   const [shoppingCart, setShoppingCart] = useOutletContext();
   console.log(shoppingCart);
 
-  if (shoppingCart === undefined) {
+  function clearCart()
+  
+  {
+    // setShoppingCart(...shoppingCart, shoppingCart[1][{ itemName: "Pixel 9", itemPrice: "$1,000", quantity: 1, totalItemPrice: 1000 }])
+  }
+
+  if (shoppingCart === undefined || shoppingCart[1]===null ) {
     return (
       <div>
         <h1>Empty Cart</h1>
@@ -40,7 +46,7 @@ function ShoppingCart() {
         <h3>Total: Aud</h3>
 
         <button type="button">Checkout</button>
-        <button type="button">Clear Cart</button>
+        <button type="button" onClick={clearCart}>Clear Cart</button>
       </div>
     );
   }
