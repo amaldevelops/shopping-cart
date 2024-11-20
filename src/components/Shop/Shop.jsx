@@ -7,11 +7,9 @@ import Navigation from "../Navigation/Navigation";
 import ShopItems from "./ShopItems/ShopItems";
 
 function Shop() {
-  const [shoppingCart, setShoppingCart] = useState([
-    { totalItems: 0, totalPrice: 0 },
-
-    [{ itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 }],
-  ]);
+  const [shoppingCart, setShoppingCart] = useState(
+    { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 },
+  );
 
   function updateCart() {}
 

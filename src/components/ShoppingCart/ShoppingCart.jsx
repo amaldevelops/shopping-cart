@@ -5,27 +5,44 @@ import { Outlet, useOutletContext } from "react-router-dom";
 import Navigation from "../Navigation/Navigation";
 
 const Heading1 = styled.h1`
-  font-size: 1.8em;
+  font-size: 2.8em;
   text-align: center;
   color: #bf4f74;
 `;
 
+const Heading2 = styled.h2`
+  font-size: 1.2em;
+  text-align: center;
+  color: #bf4f74;
+`;
+
+const ListsUl = styled.ul`
+  list-style-type: none;
+  text-decoration: none;
+`;
+
+// let cart = "";
+let total;
+const itemTest = ["Pixel9", "Android Tablet", "Walkie Talkie"];
+const itemTest2 = [{ Pixel9: 10 }, { AndroidTablet: 10 }, { WalkieTalkie: 4 }];
+
 function ShoppingCart() {
-  const Heading2 = styled.h2`
-    font-size: 1.3em;
-    text-align: center;
-    color: #bf4f74;
-  `;
   const [shoppingCart, setShoppingCart] = useOutletContext();
   console.log(shoppingCart);
 
-  function clearCart()
-  
-  {
-    // setShoppingCart(...shoppingCart, shoppingCart[1][{ itemName: "Pixel 9", itemPrice: "$1,000", quantity: 1, totalItemPrice: 1000 }])
+  function clearCart() {
+    // console.log(shoppingCart)
+
+    setShoppingCart({ ...shoppingCart, itemName: "", itemPrice: "" });
   }
 
-  if (shoppingCart === undefined || shoppingCart[1]===null ) {
+  function updateCart() {
+    setShoppingCart({ ...shoppingCart, itemName: "Pixel 9", itemPrice: 1000 });
+
+    total = <h3>Total: Aud</h3>;
+  }
+
+  if (shoppingCart === undefined || shoppingCart[1] === null) {
     return (
       <div>
         <h1>Empty Cart</h1>
@@ -36,17 +53,27 @@ function ShoppingCart() {
       <div>
         <div>
           <h1>Cart</h1>
+          <ListsUl>
+            {itemTest.map((itemTests) => {
+              return <li key={itemTests}>{itemTests}</li>;
+            })}
+          </ListsUl>
+          {total}
         </div>
 
-        <p>
-          <strong>{shoppingCart[1]["itemName"]} : </strong>3 x{" "}
-          <span>{shoppingCart[0]["itemPrice"]} </span>
+        {/* <p>
+          <strong>{shoppingCart["itemName"]} : </strong>3 x{" "}
+          <span>{shoppingCart["itemPrice"]} </span>
           <span>=Aud50</span>
-        </p>
-        <h3>Total: Aud</h3>
+        </p> */}
+        {/* <h3>Total: Aud</h3> */}
 
-        <button type="button">Checkout</button>
-        <button type="button" onClick={clearCart}>Clear Cart</button>
+        <button type="button" onClick={updateCart}>
+          Checkout
+        </button>
+        <button type="button" onClick={clearCart}>
+          Clear Cart
+        </button>
       </div>
     );
   }
