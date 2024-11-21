@@ -23,8 +23,19 @@ const ListsUl = styled.ul`
 
 // let cart = "";
 let total;
-const itemTest = ["Pixel9", "Android Tablet", "Walkie Talkie"];
-const itemTest2 = [{ Pixel9: 10 }, { AndroidTablet: 10 }, { WalkieTalkie: 4 }];
+
+const itemTest2 = {
+  items: [
+    { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
+    { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
+    {
+      itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      itemPrice: 109,
+      quantity: 1000,
+    },
+  ],
+  summary: { cartQuantity: 10, CartTotal: 5642 },
+};
 
 function ShoppingCart() {
   const [shoppingCart, setShoppingCart] = useOutletContext();
@@ -32,14 +43,30 @@ function ShoppingCart() {
 
   function clearCart() {
     // console.log(shoppingCart)
+    let shoppingCartLength = shoppingCart[0].length;
 
-    setShoppingCart({ ...shoppingCart, itemName: "", itemPrice: "" });
+    let updatedShoppingCart = shoppingCart[0].splice(0, shoppingCartLength);
+
+    setShoppingCart({ ...shoppingCart, updatedShoppingCart });
   }
 
   function updateCart() {
-    setShoppingCart({ ...shoppingCart, itemName: "Pixel 9", itemPrice: 1000 });
+    let newShoppingCart = {
+      items: [
+        { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
+        { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
+        {
+          itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+          itemPrice: 109,
+          quantity: 1000,
+        },
+      ],
+      summary: { cartQuantity: 10, CartTotal: 5642 },
+    };
 
-    total = <h3>Total: Aud</h3>;
+    setShoppingCart({ ...shoppingCart, newShoppingCart });
+
+    // total = <h3>Total: Aud</h3>;
   }
 
   if (shoppingCart === undefined || shoppingCart[1] === null) {
@@ -54,19 +81,25 @@ function ShoppingCart() {
         <div>
           <h1>Cart</h1>
           <ListsUl>
-            {itemTest.map((itemTests) => {
-              return <li key={itemTests}>{itemTests}</li>;
+            {shoppingCart["items"].map((CartList, index) => {
+              return (
+                <li key={index}>
+                  {CartList.itemName}
+                  {"=> "}
+                  {"Quantity: "}
+                  {CartList.quantity}
+                  {" x "}
+                  {"Aud "}
+                  {CartList.itemPrice} {"Total Aud"}
+                  {CartList.quantity * CartList.itemPrice}
+                  {CartList.CartTotal}
+                </li>
+              );
             })}
           </ListsUl>
-          {total}
+          <h3>Cart Quantity: {shoppingCart["summary"]["cartQuantity"]}</h3>
+          <h3>Cart Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
         </div>
-
-        {/* <p>
-          <strong>{shoppingCart["itemName"]} : </strong>3 x{" "}
-          <span>{shoppingCart["itemPrice"]} </span>
-          <span>=Aud50</span>
-        </p> */}
-        {/* <h3>Total: Aud</h3> */}
 
         <button type="button" onClick={updateCart}>
           Checkout
