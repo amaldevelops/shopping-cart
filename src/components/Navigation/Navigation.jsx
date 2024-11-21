@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import NavigationCSS from "./Navigation.module.css";
 
 function Navigation({shoppingCart}) {
-  let noOfItems = 3;
+  let noOfItems =0;
+  console.log(shoppingCart)
   return (
     <div className={NavigationCSS.navigationBar}>
       <ul>
@@ -15,9 +16,9 @@ function Navigation({shoppingCart}) {
           <Link to="../shop/cart">Shop</Link>
         </li>
         
-        {/* <li>
+        <li>
           <Link to="../shop/cart">Cart <span><strong>({noOfItems})</strong></span></Link>
-        </li> */}
+        </li>
       </ul>
     </div>
   );

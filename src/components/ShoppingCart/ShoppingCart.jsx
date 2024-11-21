@@ -71,7 +71,7 @@ function ShoppingCart({ cartUpdateProp }) {
     });
   }
 
-  if (shoppingCart === undefined || shoppingCart[1] === null) {
+  if (shoppingCart === undefined || shoppingCart.items.length === 0) {
     return (
       <div>
         <h1>Empty Cart</h1>
@@ -103,8 +103,7 @@ function ShoppingCart({ cartUpdateProp }) {
           <h3>Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
         </div>
 
-        <button type="button">
-          Checkout
+        <button type="button">Checkout
         </button>
         <button type="button" onClick={clearCart}>
           Clear Cart

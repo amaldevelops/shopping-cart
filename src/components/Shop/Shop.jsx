@@ -9,11 +9,7 @@ import ShopItems from "./ShopItems/ShopItems";
 function Shop() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [
-      // {
-      //   itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-      //   itemPrice: 109,
-      //   quantity: 1000,
-      // },
+
     ],
     summary: { cartQuantity: 0, CartTotal: 0 },
   });

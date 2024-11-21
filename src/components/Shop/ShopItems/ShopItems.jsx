@@ -79,6 +79,7 @@ function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) 
         <label htmlFor="quantity">Quantity : </label>
         <button onClick={decreaseItems}> - </button>
         <input
+        disabled
           type="number"
           id="quantity"
           name="quantity"
