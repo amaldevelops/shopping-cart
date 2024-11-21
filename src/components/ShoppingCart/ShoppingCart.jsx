@@ -45,27 +45,34 @@ function ShoppingCart() {
     setShoppingCart({ items: [], summary: { cartQuantity: 0, CartTotal: 0 } });
   }
 
+  // function updateCart() {
+  
+  //   let newItem = { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 };
+
+  //   setShoppingCart({
+  //     items: [newItem],
+  //     summary: { cartQuantity: 1, CartTotal: 3 },
+  //   });
+  // }
+
   function updateCart() {
-    // let newShoppingCart = {
-    //   items: [
-    //     { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
-    //     { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
-    //     {
-    //       itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-    //       itemPrice: 109,
-    //       quantity: 1000,
-    //     },
-    //   ],
-    //   summary: { cartQuantity: 10, CartTotal: 5642 },
-    // };
-
-    let newItem = { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 };
-
+    // Create a new array with the new item added
+    const updatedItems = [
+      ...shoppingCart.items, // Spread existing items
+      { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 }, // Add new item
+    ];
+  
+    // Calculate the updated cart summary
+    const totalQuantity = updatedItems.reduce((sum, item) => sum + item.quantity, 0);
+    const totalCost = updatedItems.reduce((sum, item) => sum + item.itemPrice * item.quantity, 0);
+  
+    // Update the shopping cart state
     setShoppingCart({
-      items: [newItem],
-      summary: { cartQuantity: 1, CartTotal: 3 },
+      items: updatedItems,
+      summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
     });
   }
+  
 
   if (shoppingCart === undefined || shoppingCart[1] === null) {
     return (
