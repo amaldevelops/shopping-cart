@@ -9,29 +9,94 @@ import ShopItems from "./ShopItems/ShopItems";
 function Shop() {
   const [shoppingCart, setShoppingCart] = useState({
     items: [
-      { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
-      { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
-      {
-        itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-        itemPrice: 109,
-        quantity: 1000,
-      },
+      // {
+      //   itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+      //   itemPrice: 109,
+      //   quantity: 1000,
+      // },
     ],
-    summary: { cartQuantity: 10, CartTotal: 5642 },
+    summary: { cartQuantity: 0, CartTotal: 0 },
+  });
+
+  function updateCartAddItem(itemInfo) {
+    // Create a new array with the new item added
+    const updatedItems = [
+      ...shoppingCart.items,
+      itemInfo,
+      // Add new item
+    ];
+
+    // Calculate the updated cart summary
+    const totalQuantity = updatedItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+    const totalCost = updatedItems.reduce(
+      (sum, items) => sum + items.itemPrice * items.quantity,
+      0
+    );
+
+    // Update the shopping cart state
+    setShoppingCart({
+      items: updatedItems,
+      summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
+    });
   }
 
-    // { itemName: "Item Name", itemPrice: "$0", quantity: 0, totalItemPrice: 0 },
-  );
+  function updateCartRemoveItem(itemInfo) {
+    // Create a new array with the new item added
+    const updatedItems = [
+      ...shoppingCart.items,
+      itemInfo,
+      // Add new item
+    ];
+
+    // Calculate the updated cart summary
+    const totalQuantity = updatedItems.reduce(
+      (sum, item) => sum - item.quantity,
+      0
+    );
+    const totalCost = updatedItems.reduce(
+      (sum, items) => sum - items.itemPrice * items.quantity,
+      0
+    );
+
+    // Update the shopping cart state
+    setShoppingCart({
+      items: updatedItems,
+      summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
+    });
+  }
 
   return (
     <div>
-      <Navigation shoppingCart={shoppingCart}/>
+      <Navigation shoppingCart={shoppingCart} />
       <Outlet context={[shoppingCart, setShoppingCart]} />
-      <ShopItems itemSearchTerm={10} setShoppingCart={setShoppingCart}/>
-      <ShopItems itemSearchTerm={11} />
-      <ShopItems itemSearchTerm={12} />
-      <ShopItems itemSearchTerm={13} />
-      <ShopItems itemSearchTerm={14} />
+      <ShopItems
+        itemSearchTerm={10}
+        updateCartAddItem={updateCartAddItem}
+        updateCartRemoveItem={updateCartRemoveItem}
+      />
+      <ShopItems
+        itemSearchTerm={11}
+        updateCartAddItem={updateCartAddItem}
+        updateCartRemoveItem={updateCartRemoveItem}
+      />
+      <ShopItems
+        itemSearchTerm={12}
+        updateCartAddItem={updateCartAddItem}
+        updateCartRemoveItem={updateCartRemoveItem}
+      />
+      <ShopItems
+        itemSearchTerm={13}
+        updateCartAddItem={updateCartAddItem}
+        updateCartRemoveItem={updateCartRemoveItem}
+      />
+      <ShopItems
+        itemSearchTerm={14}
+        updateCartAddItem={updateCartAddItem}
+        updateCartRemoveItem={updateCartRemoveItem}
+      />
     </div>
   );
 }

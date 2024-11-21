@@ -37,7 +37,7 @@ const itemTest2 = {
   summary: { cartQuantity: 10, CartTotal: 5642 },
 };
 
-function ShoppingCart() {
+function ShoppingCart({ cartUpdateProp }) {
   const [shoppingCart, setShoppingCart] = useOutletContext();
   console.log(shoppingCart);
 
@@ -45,34 +45,31 @@ function ShoppingCart() {
     setShoppingCart({ items: [], summary: { cartQuantity: 0, CartTotal: 0 } });
   }
 
-  // function updateCart() {
-  
-  //   let newItem = { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 };
-
-  //   setShoppingCart({
-  //     items: [newItem],
-  //     summary: { cartQuantity: 1, CartTotal: 3 },
-  //   });
-  // }
-
+  let itemName = { cartUpdateProp };
   function updateCart() {
     // Create a new array with the new item added
     const updatedItems = [
-      ...shoppingCart.items, // Spread existing items
-      { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 }, // Add new item
+      ...shoppingCart.items,
+      itemName,
+      // Add new item
     ];
-  
+
     // Calculate the updated cart summary
-    const totalQuantity = updatedItems.reduce((sum, item) => sum + item.quantity, 0);
-    const totalCost = updatedItems.reduce((sum, item) => sum + item.itemPrice * item.quantity, 0);
-  
+    const totalQuantity = updatedItems.reduce(
+      (sum, item) => sum + item.quantity,
+      0
+    );
+    const totalCost = updatedItems.reduce(
+      (sum, items) => sum + items.itemPrice * items.quantity,
+      0
+    );
+
     // Update the shopping cart state
     setShoppingCart({
       items: updatedItems,
       summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
     });
   }
-  
 
   if (shoppingCart === undefined || shoppingCart[1] === null) {
     return (
@@ -106,7 +103,7 @@ function ShoppingCart() {
           <h3>Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
         </div>
 
-        <button type="button" onClick={updateCart}>
+        <button type="button">
           Checkout
         </button>
         <button type="button" onClick={clearCart}>

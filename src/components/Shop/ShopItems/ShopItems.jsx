@@ -8,7 +8,9 @@ const DivStyles = styled.div`
   background-color: #4fcfb3;
 `;
 
-function ShopItems({ itemSearchTerm }) {
+function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) {
+
+  
   const [itemInfo, setItemInfo] = useState({
     itemName: "Item Name",
     itemImage: "",
@@ -17,22 +19,27 @@ function ShopItems({ itemSearchTerm }) {
     quantity: 0,
   });
 
-  function decreaseItems() {
-    if (itemInfo.quantity > 0) {
-      let decreaseItems = itemInfo.quantity - 1;
-      setItemInfo({ ...itemInfo, quantity: decreaseItems });
-    }
-  }
+
   function increaseItems() {
     if (itemInfo.quantity < 10) {
       let increaseItems = itemInfo.quantity + 1;
 
-      setItemInfo({ ...itemInfo, quantity: increaseItems });
+      setItemInfo({ ...itemInfo, quantity: increaseItems});
+      // updateCartAddItem(itemInfo);
+    }
+  }
+
+  function decreaseItems() {
+    if (itemInfo.quantity > 0) {
+      let decreaseItems = itemInfo.quantity - 1;
+      setItemInfo({ ...itemInfo, quantity: decreaseItems });
+      // updateCartRemoveItem(itemInfo);
     }
   }
 
   function addToCart() {
-    alert("Add to Cart Man !");
+    // alert("Add to Cart Man !");
+    updateCartAddItem(itemInfo)
   }
 
   useEffect(() => {
