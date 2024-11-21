@@ -42,31 +42,29 @@ function ShoppingCart() {
   console.log(shoppingCart);
 
   function clearCart() {
-    // console.log(shoppingCart)
-    let shoppingCartLength = shoppingCart[0].length;
-
-    let updatedShoppingCart = shoppingCart[0].splice(0, shoppingCartLength);
-
-    setShoppingCart({ ...shoppingCart, updatedShoppingCart });
+    setShoppingCart({ items: [], summary: { cartQuantity: 0, CartTotal: 0 } });
   }
 
   function updateCart() {
-    let newShoppingCart = {
-      items: [
-        { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
-        { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
-        {
-          itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-          itemPrice: 109,
-          quantity: 1000,
-        },
-      ],
-      summary: { cartQuantity: 10, CartTotal: 5642 },
-    };
+    // let newShoppingCart = {
+    //   items: [
+    //     { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
+    //     { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
+    //     {
+    //       itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
+    //       itemPrice: 109,
+    //       quantity: 1000,
+    //     },
+    //   ],
+    //   summary: { cartQuantity: 10, CartTotal: 5642 },
+    // };
 
-    setShoppingCart({ ...shoppingCart, newShoppingCart });
+    let newItem = { itemName: "Moto G Phone", itemPrice: 400, quantity: 3 };
 
-    // total = <h3>Total: Aud</h3>;
+    setShoppingCart({
+      items: [newItem],
+      summary: { cartQuantity: 1, CartTotal: 3 },
+    });
   }
 
   if (shoppingCart === undefined || shoppingCart[1] === null) {
@@ -97,8 +95,8 @@ function ShoppingCart() {
               );
             })}
           </ListsUl>
-          <h3>Cart Quantity: {shoppingCart["summary"]["cartQuantity"]}</h3>
-          <h3>Cart Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
+          <h3>Total Quantity: {shoppingCart["summary"]["cartQuantity"]}</h3>
+          <h3>Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
         </div>
 
         <button type="button" onClick={updateCart}>
