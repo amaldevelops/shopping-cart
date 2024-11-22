@@ -24,18 +24,6 @@ const ListsUl = styled.ul`
 // let cart = "";
 let total;
 
-const itemTest2 = {
-  items: [
-    { itemName: "Pixel 9 Phone", itemPrice: 900, quantity: 10 },
-    { itemName: "Pixel 15 Phone", itemPrice: 1000, quantity: 1 },
-    {
-      itemName: "SanDisk SSD PLUS 1TB Internal SSD - SATA III 6 Gb/s",
-      itemPrice: 109,
-      quantity: 1000,
-    },
-  ],
-  summary: { cartQuantity: 10, CartTotal: 5642 },
-};
 
 function ShoppingCart({ cartUpdateProp }) {
   const [shoppingCart, setShoppingCart] = useOutletContext();

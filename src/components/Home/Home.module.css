@@ -1,12 +1,12 @@
 .container {
   display: flex;
   flex-direction: column;
-  padding: 0rem 0rem 5rem 0rem;
+  padding: 0rem 0rem 1rem 0rem;
   margin: 0rem 0rem 1rem 0rem;
 }
 
 .headingsH1 {
-  padding-bottom: 2rem;
+  padding-bottom: 0.5rem;
 }
 
 .list {
@@ -17,5 +17,5 @@
 }
 
 .listItem {
-  padding: 0rem;
+  padding: 0.5rem;
 }
