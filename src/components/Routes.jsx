@@ -19,6 +19,10 @@ const routes = [
     element: <Shop />,
     children: [{ path: "cart", element: <ShoppingCart /> }],
   },
+  // {
+  //   path:"cart",
+  //   element:<ShoppingCart/>
+  // }
 ];
 
 export default routes;
