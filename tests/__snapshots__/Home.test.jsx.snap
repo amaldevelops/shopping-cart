@@ -1,0 +1,138 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home Component > matches the snapshot 1`] = `
+<div>
+  <div
+    class="_container_345077"
+  >
+    <div
+      class="_navigationBar_70c253"
+    >
+      <ul>
+        <li>
+          <a
+            href="/home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shop/cart"
+          >
+            Shop
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shop/cart"
+          >
+            Cart 
+            <span>
+              <strong>
+                (
+                0
+                )
+              </strong>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <h1>
+      Welcome to Mock Shopping cart developed using React
+    </h1>
+    <div
+      class="_container_345077"
+    >
+      <h2>
+        About
+      </h2>
+      <ul
+        class="_list_345077"
+      >
+        <li>
+          <a
+            href="https://github.com/1Amal/React-ShoppingCart"
+          >
+            Source Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://amalk-reactshoppingcart.netlify.app/"
+          >
+            Live Demo
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      class="_container_345077"
+    >
+      <h2
+        class="_headingsH1_345077"
+      >
+        App Architecture
+      </h2>
+      <h3>
+        Component Structure
+      </h3>
+      <ul
+        class="_list_345077"
+      >
+        <li
+          class="_listItem_345077"
+        >
+          Main =&gt; App =&gt; Home =&gt; 
+        </li>
+        <li
+          class="_listItem_345077"
+        >
+          Shop =&gt; 
+        </li>
+        <li
+          class="_listItem_345077"
+        >
+          Shopping Cart
+        </li>
+        <li
+          class="_listItem_345077"
+        >
+          Product
+        </li>
+      </ul>
+      <div
+        class="_container_345077"
+      >
+        <h1
+          class="_headingsH1_345077"
+        >
+          App Specification
+        </h1>
+        <ul
+          class="_list_345077"
+        >
+          <li
+            class="_listItem_345077"
+          >
+            Consistent Navigation Bar
+          </li>
+          <li>
+            Fetch shop items from FakeStore API 
+          </li>
+          <li>
+            Clear out any missing in props validation errors
+          </li>
+          <li>
+            Use React Testing Library to test the App
+          </li>
+          <li>
+            Style the app using CSS Modules and Styled Components
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

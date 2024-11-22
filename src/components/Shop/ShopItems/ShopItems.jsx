@@ -8,9 +8,11 @@ const DivStyles = styled.div`
   background-color: #4fcfb3;
 `;
 
-function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) {
-
-  
+function ShopItems({
+  itemSearchTerm,
+  updateCartAddItem,
+  updateCartRemoveItem,
+}) {
   const [itemInfo, setItemInfo] = useState({
     itemName: "Item Name",
     itemImage: "",
@@ -19,12 +21,11 @@ function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) 
     quantity: 0,
   });
 
-
   function increaseItems() {
     if (itemInfo.quantity < 10) {
       let increaseItems = itemInfo.quantity + 1;
 
-      setItemInfo({ ...itemInfo, quantity: increaseItems});
+      setItemInfo({ ...itemInfo, quantity: increaseItems });
       // updateCartAddItem(itemInfo);
     }
   }
@@ -33,13 +34,12 @@ function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) 
     if (itemInfo.quantity > 0) {
       let decreaseItems = itemInfo.quantity - 1;
       setItemInfo({ ...itemInfo, quantity: decreaseItems });
-      // updateCartRemoveItem(itemInfo);
     }
   }
 
   function addToCart() {
     // alert("Add to Cart Man !");
-    updateCartAddItem(itemInfo)
+    updateCartAddItem(itemInfo);
   }
 
   useEffect(() => {
@@ -79,7 +79,7 @@ function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) 
         <label htmlFor="quantity">Quantity : </label>
         <button onClick={decreaseItems}> - </button>
         <input
-        disabled
+          disabled
           type="number"
           id="quantity"
           name="quantity"
@@ -92,6 +92,9 @@ function ShopItems({ itemSearchTerm, updateCartAddItem, updateCartRemoveItem }) 
         />
         <button onClick={increaseItems}>+</button>
         <button onClick={addToCart}>Add To Cart</button>
+        <button onClick={() => updateCartRemoveItem(itemInfo)}>
+          Remove Item
+        </button>
       </DivStyles>
     </div>
   );

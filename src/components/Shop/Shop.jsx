@@ -39,30 +39,54 @@ function Shop() {
     });
   }
 
-  function updateCartRemoveItem(itemInfo) {
-    // Create a new array with the new item added
-    const updatedItems = [
-      ...shoppingCart.items,
-      itemInfo,
-      // Add new item
-    ];
+  // function updateCartRemoveItem(itemInfo) {
+  //   // Create a new array with the new item added
+  //   const updatedItems = [
+  //     ...shoppingCart.items,
+  //     itemInfo,
+  //     // Add new item
+  //   ];
 
+  //   // Calculate the updated cart summary
+  //   const totalQuantity = updatedItems.reduce(
+  //     (sum, item) => sum - item.quantity,
+  //     0
+  //   );
+  //   const totalCost = updatedItems.reduce(
+  //     (sum, items) => sum - items.itemPrice * items.quantity,
+  //     0
+  //   );
+
+  //   // Update the shopping cart state
+  //   setShoppingCart({
+  //     items: updatedItems,
+  //     summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
+  //   });
+  // }
+
+  function updateCartRemoveItem(itemInfo) {
+    // Filter out the item to remove
+    const updatedItems = shoppingCart.items.filter(
+      (item) => item.itemName !== itemInfo.itemName
+    );
+  
     // Calculate the updated cart summary
     const totalQuantity = updatedItems.reduce(
-      (sum, item) => sum - item.quantity,
+      (sum, item) => sum + item.quantity,
       0
     );
     const totalCost = updatedItems.reduce(
-      (sum, items) => sum - items.itemPrice * items.quantity,
+      (sum, item) => sum + item.itemPrice * item.quantity,
       0
     );
-
+  
     // Update the shopping cart state
     setShoppingCart({
       items: updatedItems,
       summary: { cartQuantity: totalQuantity, CartTotal: totalCost },
     });
   }
+  
 
   return (
     <div>

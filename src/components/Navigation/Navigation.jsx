@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import NavigationCSS from "./Navigation.module.css";
 
 function Navigation({shoppingCart}) {
-  let noOfItems =0;
+  // let noOfItems =shoppingCart.summary.cartQuantity;
+  let noOfItems=0;
   console.log(shoppingCart)
   return (
     <div className={NavigationCSS.navigationBar}>
