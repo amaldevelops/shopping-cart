@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import PropTypes from 'prop-types';
+
 import styled from "styled-components";
 
 const DivStyles = styled.div`
@@ -18,7 +20,7 @@ function ShopItems({
     itemImage: "",
     itemDescription: "Item Description",
     itemPrice: "$0",
-    quantity: 0,
+    quantity: 1,
   });
 
   function increaseItems() {
@@ -100,4 +102,9 @@ function ShopItems({
   );
 }
 
+ShopItems.propTypes={
+  itemSearchTerm:PropTypes.number.isRequired,
+  updateCartAddItem:PropTypes.func.isRequired,
+  updateCartRemoveItem:PropTypes.func.isRequired
+}
 export default ShopItems;

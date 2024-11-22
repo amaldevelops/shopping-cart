@@ -2,6 +2,9 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import { Outlet, useOutletContext } from "react-router-dom";
 
+import PropTypes2 from 'prop-types';
+
+
 import Navigation from "../Navigation/Navigation";
 
 const Heading1 = styled.h1`
@@ -22,7 +25,6 @@ const ListsUl = styled.ul`
 `;
 
 // let cart = "";
-let total;
 
 function ShoppingCart({ cartUpdateProp }) {
   const [shoppingCart, setShoppingCart] = useOutletContext();
@@ -97,6 +99,11 @@ function ShoppingCart({ cartUpdateProp }) {
       </div>
     );
   }
+}
+
+ShoppingCart.propTypes={
+  cartUpdateProp:PropTypes2.func.isRequired,
+
 }
 
 export default ShoppingCart;
