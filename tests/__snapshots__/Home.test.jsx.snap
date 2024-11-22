@@ -1,0 +1,101 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Home Component > matches the snapshot 1`] = `
+<div>
+  <div
+    class="_container_345077"
+  >
+    <div
+      class="_navigationBar_70c253"
+    >
+      <ul>
+        <li>
+          <a
+            href="/home"
+          >
+            Home
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shop/cart"
+          >
+            Shop
+          </a>
+        </li>
+        <li>
+          <a
+            href="/shop/cart"
+          >
+            Cart
+             
+            <span>
+              <strong>
+                (
+                0
+                )
+              </strong>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <h1>
+      Welcome to Mock Shopping cart developed using React
+    </h1>
+    <div
+      class="_container_345077"
+    >
+      <p>
+        The Mock Shopping Cart is a React-based project designed to demonstrate a practical understanding of modern development practices. This project was developed to learn React Concepts for a dynamic, user-friendly shopping cart application, emphasizing React fundamentals and best practices.
+      </p>
+      <p>
+        This project highlights careful planning of component and folder structure, with thoughtful design and implementation of functionality. It’s a perfect example of translating React concepts into a functional, polished product. Feel free to explore the code and try the live demo:
+      </p>
+      <ul
+        class="_list_345077"
+      >
+        <li>
+          <a
+            href="https://github.com/1Amal/React-ShoppingCart"
+          >
+            Source Code
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://amalk-reactshoppingcart.netlify.app/"
+          >
+            Live Demo
+          </a>
+        </li>
+      </ul>
+      <h2
+        class="_headingsH1_345077"
+      >
+        App Architecture
+      </h2>
+      <ul>
+        <li>
+          Multi-Page Application: Includes a Home Page with a customizable introduction and a Shop Page where users can browse and interact with products. Navigation between pages is handled through a persistent navigation bar.
+        </li>
+        <li>
+          Dynamic Shopping Cart: The navigation bar displays the current number of items in the cart, along with a quick-access button to review or modify the cart's contents.
+        </li>
+        <li>
+          Interactive Product Cards: Each product card includes: A title Quantity controls (increment, decrement, and manual input field) An "Add to Cart" button Cart updates dynamically based on user interactions. Data Integration: Shop items are fetched dynamically from the FakeStore API, showcasing the use of React's useEffect for fetching data and useState for managing state.
+        </li>
+        <li>
+          Testing: The application has been tested using the React Testing Library to ensure reliability. Tests focus on custom logic and user flows, avoiding direct testing of external libraries like react-router-dom.
+        </li>
+        <li>
+          Styling and Design: The application is styled using CSS Modules and Styled Components, ensuring a modern, visually appealing interface.
+        </li>
+        <li>
+          Deployment Ready: The project is configured for deployment as a Single Page Application (SPA), with proper routing handled for hosting solutions like Netlify.
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
