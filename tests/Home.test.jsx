@@ -4,13 +4,12 @@ import { MemoryRouter } from "react-router-dom";
 import Home from "../src/components/Home/Home";
 import { ShoppingCartProvider } from "../src/components/ShoppingCart/ShoppingCartContext"; // Import the ShoppingCartProvider
 
-
 describe("Home Component", () => {
   it("matches the snapshot", () => {
     const { container } = render(
       <MemoryRouter>
-         <ShoppingCartProvider>
-        <Home />
+        <ShoppingCartProvider>
+          <Home />
         </ShoppingCartProvider>
       </MemoryRouter>
     );
