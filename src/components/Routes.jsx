@@ -7,8 +7,8 @@ import Navigation from "./Navigation/Navigation";
 const routes = [
   {
     path: "/",
-    element: <App />,
-    errorElement: <App />,
+    element: <Home />,
+    errorElement: <Home />,
   },
   {
     path: "home",
@@ -17,14 +17,8 @@ const routes = [
   {
     path: "shop",
     element: <Shop />,
-    children:[
-      {path:"cart",element:<ShoppingCart />}
-    ],
+    children: [{ path: "cart", element: <ShoppingCart /> }],
   },
-  // {
-  //   path: "ShoppingCart",
-  //   element: <ShoppingCart />,
-  // },
 ];
 
 export default routes;

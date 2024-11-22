@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
-
+import { useContext } from "react";
+import { ShoppingCartContext } from "../ShoppingCart/ShoppingCartContext";
 import NavigationCSS from "./Navigation.module.css";
 
-function Navigation({shoppingCart}) {
-  // let noOfItems =shoppingCart.summary.cartQuantity;
-  let noOfItems=0;
-  console.log(shoppingCart)
+function Navigation() {
+  const { shoppingCart } = useContext(ShoppingCartContext);
+
+  // let noOfItems=shoppingCart;
+  let noOfItems = shoppingCart.summary.cartQuantity;
+
+  console.log(shoppingCart);
   return (
     <div className={NavigationCSS.navigationBar}>
       <ul>
@@ -16,9 +20,14 @@ function Navigation({shoppingCart}) {
         <li>
           <Link to="../shop/cart">Shop</Link>
         </li>
-        
+
         <li>
-          <Link to="../shop/cart">Cart <span><strong>({noOfItems})</strong></span></Link>
+          <Link to="../shop/cart">
+            Cart{" "}
+            <span>
+              <strong>({noOfItems})</strong>
+            </span>
+          </Link>
         </li>
       </ul>
     </div>

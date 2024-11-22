@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useOutletContext } from "react-router-dom";
+import { useContext } from "react";
+
+import { ShoppingCartContext } from "../ShoppingCart/ShoppingCartContext";
 
 import ShoppingCart from "../ShoppingCart/ShoppingCart";
 import Navigation from "../Navigation/Navigation";
 import ShopItems from "./ShopItems/ShopItems";
 
 function Shop() {
-  const [shoppingCart, setShoppingCart] = useState({
-    items: [],
-    summary: { cartQuantity: 0, CartTotal: 0 },
-  });
+  const { shoppingCart, setShoppingCart } = useContext(ShoppingCartContext);
 
   function updateCartAddItem(itemInfo) {
     // Create a new array with the new item added

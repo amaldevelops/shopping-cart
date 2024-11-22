@@ -24,7 +24,6 @@ const ListsUl = styled.ul`
 // let cart = "";
 let total;
 
-
 function ShoppingCart({ cartUpdateProp }) {
   const [shoppingCart, setShoppingCart] = useOutletContext();
   console.log(shoppingCart);
@@ -91,8 +90,7 @@ function ShoppingCart({ cartUpdateProp }) {
           <h3>Total Value: Aud {shoppingCart["summary"]["CartTotal"]} </h3>
         </div>
 
-        <button type="button">Checkout
-        </button>
+        <button type="button">Checkout</button>
         <button type="button" onClick={clearCart}>
           Clear Cart
         </button>

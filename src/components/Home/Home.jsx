@@ -2,10 +2,11 @@ import { Link } from "react-router-dom";
 
 import HomeCSS from "./Home.module.css";
 import Navigation from "../Navigation/Navigation";
-function Home() {
+function Home({ shoppingCart }) {
   return (
     <div className={HomeCSS.container}>
       <Navigation />
+      {/* <Navigation shoppingCart={shoppingCart}/> */}
       <h1>Welcome to Mock Shopping cart developed using React</h1>
 
       <div className={HomeCSS.container}>
@@ -22,19 +23,17 @@ function Home() {
           It’s a perfect example of translating React concepts into a
           functional, polished product. Feel free to explore the code and try
           the live demo:
-          <ul className={HomeCSS.list}>
-            <li>
-              <a href="https://github.com/1Amal/React-ShoppingCart">
-                Source Code
-              </a>
-            </li>
-            <li>
-              <a href="https://amalk-reactshoppingcart.netlify.app/">
-                Live Demo
-              </a>
-            </li>
-          </ul>
         </p>
+        <ul className={HomeCSS.list}>
+          <li>
+            <a href="https://github.com/1Amal/React-ShoppingCart">
+              Source Code
+            </a>
+          </li>
+          <li>
+            <a href="https://amalk-reactshoppingcart.netlify.app/">Live Demo</a>
+          </li>
+        </ul>
         <h2 className={HomeCSS.headingsH1}>App Architecture</h2>
         <ul>
           <li>
